@@ -1,0 +1,132 @@
+body, ul, li, input, button {
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 12px;
+}
+
+#contener {
+    display: flex;
+    margin: 5px;
+}
+#aside-left, #main {
+    border: 1px solid #888;
+    border-radius: 10px;
+    background: #E1E3E0;
+}
+#aside-left {
+    display: flex;
+    flex-direction: column;
+    /*justify-content: center;*/
+    margin-right: 10px;
+    min-width: 90px;
+}
+
+#payment-table {
+    text-align: center;
+    border-collapse: collapse;
+    border-spacing: 5px;
+    background: #E1E3E0;
+    border-radius: 20px;
+}
+
+#payment-table thead tr td {
+    font-size: 14px;
+    font-weight: 300;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: #F56433;
+    }
+#payment-table td:first-child  {
+    width: 10px;
+    }
+#payment-table td {
+    color: #8D8173;
+}
+
+input {
+    padding: 1px;
+    padding-left: 3px;
+    padding-top: 2px;
+    height: 30px;
+    background: whitesmoke;
+}
+.input-id {
+    width: 30px;
+    background-color:  #E1E3E0;
+    text-align: center;
+}
+.input-date {
+    text-align: center;
+    width: 120px;
+}
+.input-summa {
+    text-align: center;
+    width: 70px;
+}
+.input-client {
+    text-align: center;
+    width: 70px;
+}
+.client-select {
+    padding: 1px;
+    padding-left: 3px;
+    padding-top: 2px;
+    height: 30px;
+    background: whitesmoke;
+    min-width: 120px;
+}
+#ul-cat {
+    text-decoration: none;
+    list-style-type: none;
+    padding: 5px;
+}
+
+#ul-cat li {
+    font-size: 14px;
+    color: #8D8173;
+    padding-left: 5px;
+    padding-right: 5px;
+    text-align: center;
+}
+#ul-cat li:first-child {
+    color: #F56433;
+}
+
+#ul-cat li:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+button {
+    padding: 5px;
+    border: 1px solid #888;
+    border-radius: 20px;
+    background: chocolate;
+    margin: 5px;
+    font-size: 14px;
+    font-weight: 200px;
+}
+button:hover {
+    background: lite; 
+    transition-duration: 0.2s;
+    background: rgba(0,0,0,0);
+	color: chocolate;
+    border: 1px solid #666;
+}
+.btn-add {
+    background: greenyellow;
+}
+.btn-save {
+    background: tomato;
+}
+
+.btn-del {
+    padding: 0;
+    width: 26px;
+    border-radius: 13px;
+    background: gray;
+}
