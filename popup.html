@@ -18,6 +18,13 @@
       </div>
       <div id='main'>
           <table id='payment-table'>
+                <tbody>
+                  <tr v-for="item in items">
+                    <td v-for="(v, k) in item">
+                      <input v-model="item[k]">
+                    </td>
+                  </tr>
+                </tbody>
           </table>
       </div>
 
