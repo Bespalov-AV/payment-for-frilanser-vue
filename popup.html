@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Popup</title>
     <link href="popup.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   </head>
 
   <body>
@@ -11,8 +12,9 @@
     <div id="contener">
       <div id="aside-left">
         <ul id="ul-cat">
-
+          <li v-for="client of Clients">{{ client }}</li>
         </ul>
+        <input type="text" class="input-client" v-on:keyup.enter="addClient">
       </div>
       <div id='main'>
           <table id='payment-table'>
@@ -22,6 +24,7 @@
     </div>
 
     <script src="paymentclass.js"></script>
+    <script src="vueclass.js"></script>
     <script src="popup.js"></script>    
   </body>  
 </html>

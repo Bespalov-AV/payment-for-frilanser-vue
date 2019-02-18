@@ -21,15 +21,15 @@ class PaymentClass {
   }
   
   Init() {
-    this.clearTable();
+    //this.clearTable();
 
     this.getStorage();
 
-    this.addButtonAdd(this.divMain, ['btn', 'btn-add']);
-    this.addButtonSave(this.divMain, ['btn', 'btn-save']); 
+    //this.addButtonAdd(this.divMain, ['btn', 'btn-add']);
+    //this.addButtonSave(this.divMain, ['btn', 'btn-save']); 
 
-    const inputClient= this.addInputClient("", "text", "client", "input-client");
-    this.divAside.appendChild(inputClient);
+    ///const inputClient= this.addInputClient("", "text", "client", "input-client");
+    //this.divAside.appendChild(inputClient);
   };
 
  setStorage() {
@@ -48,8 +48,8 @@ class PaymentClass {
         this.Data = Data;
 
         this.getClients();
-        this.fullClients();
-        this.fullTable(Data);
+        //this.fullClients();
+        //this.fullTable(Data);
        });
       } else {
         if (localStorage["pymentData"]) {
@@ -57,8 +57,8 @@ class PaymentClass {
           this.Data = Data;
 
           this.getClients();
-          this.fullClients();
-          this.fullTable(Data);
+          //this.fullClients();
+          //this.fullTable(Data);
         }
     }
   };

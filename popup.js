@@ -1,16 +1,16 @@
-const Payment = new PaymentClass();
+//const Payment = new PaymentClass();
 
-const table = document.getElementById('payment-table');
-Payment.table = table;
+// const table = document.getElementById('payment-table');
+// Payment.table = table;
 
 
-const divAside = document.getElementById('aside-left');
-Payment.divAside = divAside;
+// const divAside = document.getElementById('aside-left');
+// Payment.divAside = divAside;
 
-const divMain = document.getElementById('main');
-Payment.divMain = divMain;
+// const divMain = document.getElementById('main');
+// Payment.divMain = divMain;
 
-const ulCat= document.getElementById('ul-cat');
-Payment.ulCat = ulCat;
+// const ulCat= document.getElementById('ul-cat');
+// Payment.ulCat = ulCat;
 
 Payment.Init();
