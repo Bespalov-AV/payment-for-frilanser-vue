@@ -17,12 +17,8 @@ const clientVue = new Vue({
 });
 
 const tableVue = new Vue({
-    el: '#payment-table',
+    el: '#main',
     data: {
-      items: [
-        { xxx: 'aaa', yyy: '!!!', zzz: '111' },
-        { xxx: 'bbb', yyy: '???', zzz: '222' },
-        { xxx: 'ccc', yyy: ':::', zzz: '333' },
-      ],
+      items: Payment.Data
     },
   });
