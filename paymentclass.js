@@ -32,36 +32,36 @@ class PaymentClass {
     //this.divAside.appendChild(inputClient);
   };
 
- setStorage() {
-    if (chrome.storage) {
-      console.log(this.Data);
-      chrome.storage.sync.set({"pymentData": this.Data});
-    } else {
-      localStorage["pymentData"] = JSON.stringify(this.Data);
-    }
-  };
+//  setStorage() {
+//     if (chrome.storage) {
+//       console.log(this.Data);
+//       chrome.storage.sync.set({"pymentData": this.Data});
+//     } else {
+//       localStorage["pymentData"] = JSON.stringify(this.Data);
+//     }
+//   };
 
-  getStorage() {
-    if (chrome.storage) {
-       chrome.storage.sync.get(["pymentData"], (result) => {
-        const Data = result.pymentData;
-        this.Data = Data;
+  // getStorage() {
+  //   if (chrome.storage) {
+  //      chrome.storage.sync.get(["pymentData"], (result) => {
+  //       const Data = result.pymentData;
+  //       this.Data = Data;
 
-        this.getClients();
-        //this.fullClients();
-        //this.fullTable(Data);
-       });
-      } else {
-        if (localStorage["pymentData"]) {
-          const Data = JSON.parse(localStorage["pymentData"]);
-          this.Data = Data;
+  //       this.getClients();
+  //       //this.fullClients();
+  //       //this.fullTable(Data);
+  //      });
+  //     } else {
+  //       if (localStorage["pymentData"]) {
+  //         const Data = JSON.parse(localStorage["pymentData"]);
+  //         this.Data = Data;
 
-          this.getClients();
-          //this.fullClients();
-          //this.fullTable(Data);
-        }
-    }
-  };
+  //         this.getClients();
+  //         //this.fullClients();
+  //         //this.fullTable(Data);
+  //       }
+  //   }
+  //};
 
   fullClients() {
     this.ulCat.innerHTML = '';

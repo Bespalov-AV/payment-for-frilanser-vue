@@ -18,15 +18,33 @@
       </div>
       <div id='main'>
           <table id='payment-table'>
+            <thead>
+                <tr>
+                  <td v-for="headTitel in tableHeader">
+                    {{ headTitel }}
+                  </td>
+                </tr>
+            </thead>
                 <tbody>
-                  <tr v-for="item in items">
-                    <td v-for="(v, k) in item">
-                      <input v-model="item[k]">
+                  <tr v-for="item in Data">
+                    <td><input type="text" class="input-id" v-model="item.id"></td>
+                    <td><input type="date" class="input-date" v-model="item.date"></td>
+                    <td><input type="text" class="input-summa" v-model="item.summa"></td>
+                    <td>
+                      <select class="client-select" v-model="item.client">
+                        <option v-for="client of Clients" v-bind:value="client">
+                          {{ client }}
+                        </option>
+                      </select>
                     </td>
+                    <td><input type="text" class="input-comment" v-model="item.comment"></td>
                   </tr>
                 </tbody>
           </table>
-          <pre>{{ JSON.stringify(items, null, 2) }}</pre>
+          <button class="btn btn-add" name="ButtonAdd" v-on:click="">Добавить запись</button>
+          <button class="btn btn-save" name="ButtonSave" v-on:click="setStorage">Сохранить</button>
+
+          <pre>{{ JSON.stringify(Data, null, 2) }}</pre>
       </div>
 
     </div>

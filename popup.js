@@ -13,4 +13,4 @@
 // const ulCat= document.getElementById('ul-cat');
 // Payment.ulCat = ulCat;
 
-Payment.Init();
+//Payment.Init();
