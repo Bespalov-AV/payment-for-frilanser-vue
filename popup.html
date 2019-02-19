@@ -10,12 +10,14 @@
   <body>
 
     <div id="contener">
+
       <div id="aside-left">
         <ul id="ul-cat">
           <li v-for="client of Clients">{{ client }}</li>
         </ul>
         <input type="text" class="input-client" v-on:keyup.enter="addClient">
       </div>
+
       <div id='main'>
           <table id='payment-table'>
             <thead>
@@ -41,7 +43,7 @@
                   </tr>
                 </tbody>
           </table>
-          <button class="btn btn-add" name="ButtonAdd" v-on:click="">Добавить запись</button>
+          <button class="btn btn-add" name="ButtonAdd" v-on:click="addString">Добавить запись</button>
           <button class="btn btn-save" name="ButtonSave" v-on:click="setStorage">Сохранить</button>
 
           <pre>{{ JSON.stringify(Data, null, 2) }}</pre>

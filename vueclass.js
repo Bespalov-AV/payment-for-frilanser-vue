@@ -1,6 +1,6 @@
 
 const tableVue = new Vue({
-    el: '#main',
+    el: '#contener',
     data: {
         Data: [],
         tableHeader: {
@@ -10,10 +10,17 @@ const tableVue = new Vue({
             'client': 'Клиент',
             'comment': 'Комментарий',
           },
-        Clients: new Set()
+        emptyLine:  {
+            id: 0,
+            date: new Date(),
+            summa: 0,
+            client: '',
+            comment: ''
+        },
+        Clients: []
     },
     methods: {
-        setStorage: function(env) {
+        setStorage(env) {
             if (chrome.storage) {
                 chrome.storage.sync.set({"pymentData": this.Data});
             } else {
@@ -24,37 +31,52 @@ const tableVue = new Vue({
             if (chrome.storage) {
                chrome.storage.sync.get(["pymentData"], (result) => {
                 this.Data = result.pymentData;
-        
-                this.getClients();
                });
               } else {
                 if (localStorage["pymentData"]) {
                     this.Data = JSON.parse(localStorage["pymentData"]);
-        
-                  this.getClients();
                 }
+                this.getClients();
             }
         },
         getClients() {
-            for (const data of this.Data) {
-              this.Clients.add(data.client);
+            if (this.Clients.length == 0) {
+                this.Clients.push('Все')
             }
-          }
+            for (const data of this.Data) {
+               this.setClients(data.client)
+            }
+        },
+        addClient(env) {
+            this.setClients(env.target.value)
+            env.target.value = ''
+        },
+        addString() {
+            const newLine = Object.assign({}, this.emptyLine)
+            this.Data.push(newLine)
+        },
+        setClients(client) {
+            const tempClients = new Set(this.Clients)
+            tempClients.add(client)
+            this.Clients= Array(...tempClients)
+        }
+
     }
+
 });
 
 tableVue.getStorage();
 
-const clientVue = new Vue({
-    el: "#aside-left",
-    data: {
-        Clients: tableVue.Clients
-    },
-    methods: {
-        addClient: function(env) {
-            this.Clients.add(env.target.value)
-            env.target.value = ''
-        } 
-    }
-    
-});
+// const clientVue = new Vue({
+//     el: "#aside-left",
+//     data: {
+//         Clients: tableVue.Clients
+//     },
+//     methods: {
+//         addClient: function(env) {
+//             this.Clients.add(env.target.value)
+//             env.target.value = ''
+//         }
+//     }
+//
+// });
