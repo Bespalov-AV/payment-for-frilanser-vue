@@ -40,13 +40,12 @@
                       </select>
                     </td>
                     <td><input type="text" class="input-comment" v-model="item.comment"></td>
+                    <td><button class="btn btn-del" name="ButtonDel" v-on:click="delString(item)">X</button></td>
                   </tr>
                 </tbody>
           </table>
           <button class="btn btn-add" name="ButtonAdd" v-on:click="addString">Добавить запись</button>
           <button class="btn btn-save" name="ButtonSave" v-on:click="setStorage">Сохранить</button>
-
-          <pre>{{ JSON.stringify(Data, null, 2) }}</pre>
       </div>
 
     </div>

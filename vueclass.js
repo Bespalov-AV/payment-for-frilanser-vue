@@ -9,6 +9,7 @@ const tableVue = new Vue({
             'summa': 'Сумма',
             'client': 'Клиент',
             'comment': 'Комментарий',
+            'del': 'Удалить'
           },
         emptyLine:  {
             id: 0,
@@ -58,6 +59,12 @@ const tableVue = new Vue({
             const tempClients = new Set(this.Clients)
             tempClients.add(client)
             this.Clients= Array(...tempClients)
+        },
+        delString(item) {
+            this.Data.splice(item,1);
+        },
+        filterTable(itClient) {
+
         }
     }
 });
