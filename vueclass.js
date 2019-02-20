@@ -68,6 +68,13 @@ const tableVue = new Vue({
             this.itClient = client
             console.log(client)
         }
+    },
+    computed: {
+        filterClients() {
+            return this.Data.filter((item) => {
+                return (item.client == this.itClient || this.itClient == 'Все')
+            })
+        }
     }
 });
 
