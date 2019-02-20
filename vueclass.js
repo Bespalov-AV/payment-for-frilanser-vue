@@ -17,7 +17,7 @@ const tableVue = new Vue({
             client: '',
             comment: ''
         },
-        Clients: []
+        Clients: ['Все']
     },
     methods: {
         setStorage(env) {
@@ -41,7 +41,6 @@ const tableVue = new Vue({
         },
         getClients() {
             if (this.Clients.length == 0) {
-                this.Clients.push('Все')
             }
             for (const data of this.Data) {
                this.setClients(data.client)
@@ -60,23 +59,8 @@ const tableVue = new Vue({
             tempClients.add(client)
             this.Clients= Array(...tempClients)
         }
-
     }
-
 });
 
 tableVue.getStorage();
 
-// const clientVue = new Vue({
-//     el: "#aside-left",
-//     data: {
-//         Clients: tableVue.Clients
-//     },
-//     methods: {
-//         addClient: function(env) {
-//             this.Clients.add(env.target.value)
-//             env.target.value = ''
-//         }
-//     }
-//
-// });
