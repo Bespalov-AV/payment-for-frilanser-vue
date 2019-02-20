@@ -13,7 +13,7 @@
 
       <div id="aside-left">
         <ul id="ul-cat">
-          <li v-for="client of Clients">{{ client }}</li>
+          <li v-for="client of Clients" v-on:click="filterOnClient(client)">{{ client }}</li>
         </ul>
         <input type="text" class="input-client" v-on:keyup.enter="addClient">
       </div>
@@ -28,7 +28,7 @@
                 </tr>
             </thead>
                 <tbody>
-                  <tr v-for="item in Data">
+                  <tr v-for="item in Data" v-show="(item.client == itClient || itClient == 'Все')">
                     <td><input type="text" class="input-id" v-model="item.id"></td>
                     <td><input type="date" class="input-date" v-model="item.date"></td>
                     <td><input type="text" class="input-summa" v-model="item.summa"></td>
@@ -46,6 +46,7 @@
           </table>
           <button class="btn btn-add" name="ButtonAdd" v-on:click="addString">Добавить запись</button>
           <button class="btn btn-save" name="ButtonSave" v-on:click="setStorage">Сохранить</button>
+          <!-- <pre>{{ JSON.stringify(Data, null, 2) }}</pre> -->
       </div>
 
     </div>

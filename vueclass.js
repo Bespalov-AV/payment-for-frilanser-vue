@@ -18,7 +18,8 @@ const tableVue = new Vue({
             client: '',
             comment: ''
         },
-        Clients: ['Все']
+        Clients: ['Все'],
+        itClient: 'Все'
     },
     methods: {
         setStorage(env) {
@@ -63,8 +64,9 @@ const tableVue = new Vue({
         delString(item) {
             this.Data.splice(item,1);
         },
-        filterTable(itClient) {
-
+        filterOnClient(client) {
+            this.itClient = client
+            console.log(client)
         }
     }
 });
