@@ -1,13 +1,13 @@
 {
   "manifest_version": 2,
-  "name": "payment-for-frilanser",
-  "description": "payment-for-frilanser",
-  "version": "0.3",
+  "name": "payment-for-frilanser-vue",
+  "description": "Пример реализации простого расширения для Chrome для ведения оплат на vue.js",
+  "version": "1.0",
 
   "background": {
     "scripts": [
-      "paymentclass.js",
-      "popup.js"
+      "vue.js",
+      "vueclass.js"
     ],
     "persistent": false
   },
