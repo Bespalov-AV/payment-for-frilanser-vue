@@ -6,14 +6,13 @@
 
   "background": {
     "scripts": [
-      "vue.js",
       "vueclass.js"
     ],
     "persistent": false
   },
 
   "browser_action": {
-    "default_icon": "bitcoin32.ico",
+    "default_icon": {"32": "bitcoin32.ico"},
     "default_popup": "popup.html"
   },
   "permissions": [
