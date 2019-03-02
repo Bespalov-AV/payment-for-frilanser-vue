@@ -28,7 +28,6 @@
                 </tr>
             </thead>
                 <tbody>
-                  <!-- <tr v-for="item in Data" v-show="(item.client == itClient || itClient == 'Все')"> -->
                   <tr v-for="item in filterClients" >
                     <td><input type="text" class="input-id" v-model="item.id"></td>
                     <td><input type="date" class="input-date" v-model="item.date"></td>

@@ -1,4 +1,3 @@
-
 const tableVue = new Vue({
     el: '#contener',
     data: {
