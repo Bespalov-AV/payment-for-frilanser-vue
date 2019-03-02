@@ -23,23 +23,13 @@ const tableVue = new Vue({
     },
     methods: {
         setStorage(env) {
-            if (chrome.storage) {
-                chrome.storage.sync.set({"pymentData": this.Data});
-            } else {
-                localStorage["pymentData"] = JSON.stringify(this.Data);
-            }
+            localStorage["pymentData"] = JSON.stringify(this.Data);
         },
         getStorage() {
-            if (chrome.storage) {
-               chrome.storage.sync.get(["pymentData"], (result) => {
-                this.Data = result.pymentData;
-               });
-              } else {
-                if (localStorage["pymentData"]) {
-                    this.Data = JSON.parse(localStorage["pymentData"]);
-                }
-                this.getClients();
+            if (localStorage["pymentData"]) {
+                this.Data = JSON.parse(localStorage["pymentData"]);
             }
+            this.getClients();
         },
         getClients() {
             if (this.Clients.length == 0) {
